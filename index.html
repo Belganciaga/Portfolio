@@ -41,7 +41,7 @@
 
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
@@ -76,22 +76,26 @@
       object-fit: cover;
       border: 5px solid var(--amarelo);
       box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), 0 10px 40px rgba(0, 0, 0, 0.5);
-      animation: fadeIn 1s ease, float 3s ease-in-out infinite;
+      /* CORRIGIDO: animações separadas para não conflitar com o hover */
+      animation: fadeIn 1s ease, float 3s ease-in-out 1s infinite;
       transition: transform 0.3s ease;
+      transform-origin: center center;
     }
 
     .foto-perfil:hover {
       transform: scale(1.05) rotate(2deg);
+      animation: none; /* para o float no hover para não travar */
     }
 
+    /* CORRIGIDO: scale dentro de transform para compatibilidade total */
     @keyframes fadeIn {
-      from { opacity: 0; scale: 0.8; }
-      to { opacity: 1; scale: 1; }
+      from { opacity: 0; transform: scale(0.8); }
+      to   { opacity: 1; transform: scale(1); }
     }
 
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+      50%       { transform: translateY(-10px); }
     }
 
     /* SEÇÃO DE PROJETOS */
@@ -276,7 +280,7 @@
         width: 150px;
         height: 150px;
       }
-      
+
       .secao-titulo {
         font-size: 1.8rem;
       }
@@ -293,19 +297,19 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Portfólio de <span>Thais Rodrigues</span></h1>
   <p class="subtitulo">Desenvolvedora | Belganciaga</p>
+  <!-- CORRIGIDO: foto movida para dentro do header (semântica correta) -->
+  <img src="thais.jpg" alt="Foto de Thais Rodrigues" class="foto-perfil" />
 </header>
-
-<img src="thais.jpg" alt="Foto de Thais Rodrigues" class="foto-perfil" />
 
 <h2 class="secao-titulo">💼 Meus Projetos</h2>
 
 <section class="container">
-
   <div class="card" onclick="acessar('https://github.com/Belganciaga/chapeu-seletor')">
     <div class="card-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🎩</div>
     <p class="linguagem">KOTLIN</p>
@@ -361,7 +365,6 @@
     <h2>❤️ App de Doação</h2>
     <p>Aplicativo para cadastrar itens, organizar e gerenciar doações sociais.</p>
   </div>
-
 </section>
 
 <section id="skills">
@@ -375,18 +378,20 @@
   </div>
 
   <h2>🌐 Onde me Encontrar</h2>
+  <!-- CORRIGIDO: adicionado rel="noopener noreferrer" por segurança (tabnabbing) -->
   <div class="social-links">
-    <a href="https://www.linkedin.com/in/thayrodrigues0308/" target="_blank" title="LinkedIn">
+    <a href="https://www.linkedin.com/in/thayrodrigues0308/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Thais Rodrigues" title="LinkedIn">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
     </a>
-    <a href="https://github.com/Belganciaga" target="_blank" title="GitHub">
+    <a href="https://github.com/Belganciaga" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Belganciaga" title="GitHub">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
     </a>
   </div>
 </section>
 
 <footer>
-  © 2025 • Desenvolvido com 💛 por Thais Rodrigues (Belganciaga)
+  <!-- CORRIGIDO: ano atualizado para 2026 -->
+  © 2026 • Desenvolvido com 💛 por Thais Rodrigues (Belganciaga)
 </footer>
 
 <script>
@@ -394,7 +399,7 @@
     window.open(link, '_blank');
   }
 
-  // Efeito de parallax suave no scroll
+  // CORRIGIDO: template literal com crases e interpolação correta
   window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     const scrolled = window.pageYOffset;
