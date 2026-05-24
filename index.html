@@ -1,412 +1,414 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio • Thais Rodrigues (Belganciaga)</title>
-  <style>
-    :root {
-      --preto: #0a0a0a;
-      --amarelo: #ffd700;
-      --amarelo-escuro: #d4af37;
-      --cinza: #1a1a1a;
-      --cinza-claro: #252525;
-      --branco: #ffffff;
-      --gradiente: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    }
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Portfólio • Thais Rodrigues (Belganciaga)</title>
+    <style>
+          :root {
+                  --preto: #0a0a0a;
+                  --amarelo: #ffd700;
+                  --amarelo-escuro: #d4af37;
+                  --cinza: #1a1a1a;
+                  --cinza-claro: #252525;
+                  --branco: #ffffff;
+                  --gradiente: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+          }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+          * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+          }
 
-    body {
-      background: var(--gradiente);
-      color: var(--branco);
-      overflow-x: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-    }
+          body {
+                  background: var(--gradiente);
+                  color: var(--branco);
+                  overflow-x: hidden;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  line-height: 1.6;
+          }
 
-    /* HEADER ANIMADO */
-    header {
-      width: 100%;
-      padding: 60px 20px 40px;
-      text-align: center;
-      background: linear-gradient(180deg, var(--cinza) 0%, transparent 100%);
-      position: relative;
-      animation: fadeDown 0.8s ease;
-    }
+          /* HEADER ANIMADO */
+          header {
+                  width: 100%;
+                  padding: 60px 20px 40px;
+                  text-align: center;
+                  background: linear-gradient(180deg, var(--cinza) 0%, transparent 100%);
+                  position: relative;
+                  animation: fadeDown 0.8s ease;
+          }
 
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-50px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+          @keyframes fadeDown {
+                  from { opacity: 0; transform: translateY(-50px); }
+                  to   { opacity: 1; transform: translateY(0); }
+          }
 
-    h1 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
-    }
+          h1 {
+                  font-size: clamp(1.8rem, 5vw, 3rem);
+                  font-weight: 700;
+                  letter-spacing: 1px;
+                  text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+          }
 
-    h1 span {
-      color: var(--amarelo);
-      background: linear-gradient(90deg, var(--amarelo) 0%, var(--amarelo-escuro) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+          h1 span {
+                  color: var(--amarelo);
+                  background: linear-gradient(90deg, var(--amarelo) 0%, var(--amarelo-escuro) 100%);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+          }
 
-    .subtitulo {
-      margin-top: 15px;
-      font-size: 1.1rem;
-      color: #bbb;
-      font-weight: 300;
-    }
+          .subtitulo {
+                  margin-top: 15px;
+                  font-size: 1.1rem;
+                  color: #bbb;
+                  font-weight: 300;
+          }
 
-    /* FOTO COM EFEITO */
-    .foto-perfil {
-      display: block;
-      margin: 40px auto;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid var(--amarelo);
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), 0 10px 40px rgba(0, 0, 0, 0.5);
-      /* CORRIGIDO: animações separadas para não conflitar com o hover */
-      animation: fadeIn 1s ease, float 3s ease-in-out 1s infinite;
-      transition: transform 0.3s ease;
-      transform-origin: center center;
-    }
+          /* FOTO COM EFEITO */
+          .foto-perfil {
+                  display: block;
+                  margin: 40px auto;
+                  width: 200px;
+                  height: 200px;
+                  border-radius: 50%;
+                  object-fit: cover;
+                  border: 5px solid var(--amarelo);
+                  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), 0 10px 40px rgba(0, 0, 0, 0.5);
+                  animation: fadeIn 1s ease, float 3s ease-in-out 1s infinite;
+                  transition: transform 0.3s ease;
+                  transform-origin: center center;
+          }
 
-    .foto-perfil:hover {
-      transform: scale(1.05) rotate(2deg);
-      animation: none; /* para o float no hover para não travar */
-    }
+          .foto-perfil:hover {
+                  transform: scale(1.05) rotate(2deg);
+                  animation: none;
+          }
 
-    /* CORRIGIDO: scale dentro de transform para compatibilidade total */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.8); }
-      to   { opacity: 1; transform: scale(1); }
-    }
+          @keyframes fadeIn {
+                  from { opacity: 0; transform: scale(0.8); }
+                  to   { opacity: 1; transform: scale(1); }
+          }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50%       { transform: translateY(-10px); }
-    }
+          @keyframes float {
+                  0%, 100% { transform: translateY(0px); }
+                  50%       { transform: translateY(-10px); }
+          }
 
-    /* SEÇÃO DE PROJETOS */
-    .secao-titulo {
-      text-align: center;
-      font-size: 2.2rem;
-      margin: 60px 0 40px;
-      color: var(--amarelo);
-      font-weight: 700;
-      animation: fadeIn 1s ease;
-    }
+          /* SECAO DE PROJETOS */
+          .secao-titulo {
+                  text-align: center;
+                  font-size: 2.2rem;
+                  margin: 60px 0 40px;
+                  color: var(--amarelo);
+                  font-weight: 700;
+                  animation: fadeIn 1s ease;
+          }
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
+          .container {
+                  width: 90%;
+                  max-width: 1200px;
+                  margin: 0 auto 60px;
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                  gap: 30px;
+          }
 
-    .card {
-      background: var(--cinza-claro);
-      padding: 0;
-      border-radius: 20px;
-      border: 2px solid transparent;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      animation: fadeIn 0.6s ease backwards;
-    }
+          .card {
+                  background: var(--cinza-claro);
+                  padding: 0;
+                  border-radius: 20px;
+                  border: 2px solid transparent;
+                  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                  cursor: pointer;
+                  position: relative;
+                  overflow: hidden;
+                  animation: fadeIn 0.6s ease backwards;
+          }
 
-    .card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 18px 18px 0 0;
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
+          .card-img {
+                  width: 100%;
+                  height: 200px;
+                  object-fit: cover;
+                  border-radius: 18px 18px 0 0;
+                  transition: transform 0.4s ease, filter 0.4s ease;
+          }
 
-    .card:hover .card-img {
-      transform: scale(1.05);
-      filter: brightness(1.1);
-    }
+          .card:hover .card-img {
+                  transform: scale(1.05);
+                  filter: brightness(1.1);
+          }
 
-    .card > p,
-    .card > h2 {
-      padding: 0 25px;
-    }
+          .card > p,
+          .card > h2 {
+                  padding: 0 25px;
+          }
 
-    .card > p:last-child {
-      padding-bottom: 25px;
-    }
+          .card > p:last-child {
+                  padding-bottom: 25px;
+          }
 
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-      transition: left 0.5s ease;
-    }
+          .card::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  left: -100%;
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+                  transition: left 0.5s ease;
+          }
 
-    .card:hover::before {
-      left: 100%;
-    }
+          .card:hover::before {
+                  left: 100%;
+          }
 
-    .card:hover {
-      border-color: var(--amarelo);
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
-    }
+          .card:hover {
+                  border-color: var(--amarelo);
+                  transform: translateY(-10px) scale(1.03);
+                  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
+          }
 
-    .linguagem {
-      color: var(--amarelo);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      margin: 20px 0 12px;
-      text-transform: uppercase;
-    }
+          .linguagem {
+                  color: var(--amarelo);
+                  font-size: 12px;
+                  font-weight: 700;
+                  letter-spacing: 1.5px;
+                  margin: 20px 0 12px;
+                  text-transform: uppercase;
+          }
 
-    .card h2 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-      color: var(--branco);
-    }
+          .card h2 {
+                  font-size: 1.4rem;
+                  margin-bottom: 12px;
+                  color: var(--branco);
+          }
 
-    .card p {
-      color: #ccc;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
+          .card p {
+                  color: #ccc;
+                  font-size: 0.95rem;
+                  line-height: 1.5;
+          }
 
-    /* SEÇÃO DE HABILIDADES */
-    #skills {
-      width: 90%;
-      max-width: 1200px;
-      margin: 80px auto;
-      text-align: center;
-    }
+          /* SECAO DE HABILIDADES */
+          #skills {
+                  width: 90%;
+                  max-width: 1200px;
+                  margin: 80px auto;
+                  text-align: center;
+          }
 
-    #skills h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: var(--amarelo);
-    }
+          #skills h2 {
+                  font-size: 2rem;
+                  margin-bottom: 30px;
+                  color: var(--amarelo);
+          }
 
-    .skills-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 60px;
-    }
+          .skills-grid {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  gap: 30px;
+                  margin-bottom: 60px;
+          }
 
-    .skill-icon {
-      width: 70px;
-      height: 70px;
-      transition: transform 0.3s ease;
-      filter: grayscale(0.3);
-    }
+          .skill-icon {
+                  width: 70px;
+                  height: 70px;
+                  transition: transform 0.3s ease;
+                  filter: grayscale(0.3);
+          }
 
-    .skill-icon:hover {
-      transform: translateY(-10px) scale(1.15);
-      filter: grayscale(0) drop-shadow(0 5px 15px rgba(255, 215, 0, 0.4));
-    }
+          .skill-icon:hover {
+                  transform: translateY(-10px) scale(1.15);
+                  filter: grayscale(0) drop-shadow(0 5px 15px rgba(255, 215, 0, 0.4));
+          }
 
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 30px;
-    }
+          .social-links {
+                  display: flex;
+                  justify-content: center;
+                  gap: 40px;
+                  margin-top: 30px;
+          }
 
-    .social-links a {
-      transition: transform 0.3s ease;
-      display: block;
-    }
+          .social-links a {
+                  transition: transform 0.3s ease;
+                  display: block;
+          }
 
-    .social-links img {
-      width: 70px;
-      height: 70px;
-      filter: invert(1);
-      transition: filter 0.3s ease;
-    }
+          .social-links img {
+                  width: 70px;
+                  height: 70px;
+                  filter: invert(1);
+                  transition: filter 0.3s ease;
+          }
 
-    .social-links a:hover {
-      transform: translateY(-8px) scale(1.1);
-    }
+          .social-links a:hover {
+                  transform: translateY(-8px) scale(1.1);
+          }
 
-    .social-links a:hover img {
-      filter: invert(0.7) sepia(1) saturate(5) hue-rotate(25deg);
-    }
+          .social-links a:hover img {
+                  filter: invert(0.7) sepia(1) saturate(5) hue-rotate(25deg);
+          }
 
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
-      color: #666;
-      font-size: 14px;
-      border-top: 1px solid #333;
-    }
+          /* FOOTER */
+          footer {
+                  text-align: center;
+                  padding: 40px 20px;
+                  margin-top: 60px;
+                  color: #666;
+                  font-size: 14px;
+                  border-top: 1px solid #333;
+          }
 
-    /* ANIMAÇÕES ESCALONADAS */
-    .card:nth-child(1) { animation-delay: 0.1s; }
-    .card:nth-child(2) { animation-delay: 0.2s; }
-    .card:nth-child(3) { animation-delay: 0.3s; }
-    .card:nth-child(4) { animation-delay: 0.4s; }
-    .card:nth-child(5) { animation-delay: 0.5s; }
-    .card:nth-child(6) { animation-delay: 0.6s; }
-    .card:nth-child(7) { animation-delay: 0.7s; }
-    .card:nth-child(8) { animation-delay: 0.8s; }
+          /* ANIMACOES ESCALONADAS */
+          .card:nth-child(1) { animation-delay: 0.1s; }
+          .card:nth-child(2) { animation-delay: 0.2s; }
+          .card:nth-child(3) { animation-delay: 0.3s; }
+          .card:nth-child(4) { animation-delay: 0.4s; }
+          .card:nth-child(5) { animation-delay: 0.5s; }
+          .card:nth-child(6) { animation-delay: 0.6s; }
+          .card:nth-child(7) { animation-delay: 0.7s; }
+          .card:nth-child(8) { animation-delay: 0.8s; }
 
-    /* RESPONSIVIDADE */
-    @media (max-width: 768px) {
-      .foto-perfil {
-        width: 150px;
-        height: 150px;
-      }
+          /* RESPONSIVIDADE */
+          @media (max-width: 768px) {
+                  .foto-perfil {
+                            width: 150px;
+                            height: 150px;
+                  }
 
-      .secao-titulo {
-        font-size: 1.8rem;
-      }
+                  .secao-titulo {
+                            font-size: 1.8rem;
+                  }
 
-      .skill-icon {
-        width: 55px;
-        height: 55px;
-      }
+                  .skill-icon {
+                            width: 55px;
+                            height: 55px;
+                  }
 
-      .social-links img {
-        width: 55px;
-        height: 55px;
-      }
-    }
-  </style>
-</head>
+                  .social-links img {
+                            width: 55px;
+                            height: 55px;
+                  }
+          }
+        </style>
+  </head>
 
-<body>
+  <body>
 
-<header>
-  <h1>Portfólio de <span>Thais Rodrigues</span></h1>
-  <p class="subtitulo">Desenvolvedora | Belganciaga</p>
-  <!-- CORRIGIDO: foto movida para dentro do header (semântica correta) -->
-  <img src="thais.jpg" alt="Foto de Thais Rodrigues" class="foto-perfil" />
-</header>
+    <header>
+        <h1>Portfólio de <span>Thais Rodrigues</span></h1>
+      <p class="subtitulo">Desenvolvedora | Belganciaga</p>p>
+      <img src="thais.jpg" alt="Foto de Thais Rodrigues" class="foto-perfil" />
+    </header>
+  
+  <h2 class="secao-titulo">💼 Meus Projetos</h2>
+  
+  <section class="container">
+  
+    <div class="card" onclick="acessar('https://github.com/Belganciaga/ChapeuSeletor-')">
+        <div class="card-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🎩</div>div>
+        <p class="linguagem">KOTLIN</p>p>
+        <h2>🎩 Chapéu Seletor</h2>
+        <p>App que sorteia a casa de Hogwarts com interface intuitiva e animações mágicas.</p>
+    </div>div>
+  
+    <div class="card" onclick="acessar('projetos/miniprojetos/index.html')">
+        <div class="card-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">⚡</div>div>
+        <p class="linguagem">JAVASCRIPT / HTML</p>
+        <h2>⚡ Mini Projetos JavaScript</h2>
+        <p>Conjunto de pequenos sistemas interativos demonstrando diferentes funcionalidades em JS.</p>
+    </div>div>
+  
+    <div class="card" onclick="acessar('https://github.com/Belganciaga/Gerador-de_Her-is')">
+        <div class="card-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🦸</div>div>
+        <p class="linguagem">KOTLIN</p>
+        <h2>🦸 Gerador de Heróis</h2>
+        <p>App que cria heróis aleatórios com atributos únicos e poderes personalizados.</p>
+    </div>div>
+  
+    <div class="card" onclick="acessar('projetos/paginainst/index.html')">
+        <div class="card-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🏢</div>div>
+        <p class="linguagem">HTML / CSS</p>
+        <h2>🏢 Página Institucional</h2>
+        <p>Site moderno e responsivo com interações suaves ao clique do usuário.</p>
+    </div>div>
+  
+    <div class="card" onclick="acessar('https://github.com/Belganciaga/Parque_Municipal_Digital')">
+        <div class="card-img" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🌳</div>div>
+        <p class="linguagem">KOTLIN</p>
+        <h2>🌳 Parque Municipal Digital</h2>
+        <p>Aplicativo educativo com informações ambientais e navegação intuitiva.</p>
+    </div>div>
+  
+    <div class="card" onclick="acessar('https://github.com/Belganciaga/sistema-cep')">
+        <div class="card-img" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">📍</div>div>
+        <p class="linguagem">TYPESCRIPT</p>
+        <h2>📍 Sistema de CEP</h2>
+        <p>Busca automática e validação de endereços utilizando API ViaCEP e TypeScript.</p>
+    </div>div>
+  
+    <div class="card" onclick="acessar('https://github.com/Belganciaga/Magic8Ball')">
+        <div class="card-img" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🎱</div>div>
+        <p class="linguagem">KOTLIN</p>
+        <h2>🎱 Magic 8 Ball</h2>
+        <p>Respostas aleatórias divertidas no estilo clássico da "bola mágica".</p>
+    </div>div>
+  
+    <div class="card" onclick="acessar('https://github.com/Belganciaga/App_Doacao')">
+        <div class="card-img" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">❤️</div>div>
+        <p class="linguagem">KOTLIN</p>
+        <h2>❤️ App de Doação</h2>
+        <p>Aplicativo para cadastrar itens, organizar e gerenciar doações sociais.</p>
+    </div>div>
+  
+  </section>section>
+  
+  <section id="skills">
+    <h2>🚀 Linguagens que Pratico</h2>
+    <div class="skills-grid">
+        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" title="Kotlin">
+        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
+        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript">
+        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
+        <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
+    </div>div>
+  
+    <h2>🌐 Onde me Encontrar</h2>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/thayrodrigues0308/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Thais Rodrigues" title="LinkedIn">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+        </a>a>
+        <a href="https://github.com/Belganciaga" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Belganciaga" title="GitHub">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+        </a>a>
+    </div>div>
+  </section>section>
+  
+  <footer>
+      © 2026 • Desenvolvido com 💛 por Thais Rodrigues (Belganciaga)
+  </footer>
 
-<h2 class="secao-titulo">💼 Meus Projetos</h2>
+    <script>
+        function acessar(link) {
+              window.open(link, '_blank');
+        }
 
-<section class="container">
-  <div class="card" onclick="acessar('https://github.com/Belganciaga/chapeu-seletor')">
-    <div class="card-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🎩</div>
-    <p class="linguagem">KOTLIN</p>
-    <h2>🎩 Chapéu Seletor</h2>
-    <p>App que sorteia a casa de Hogwarts com interface intuitiva e animações mágicas.</p>
-  </div>
+        window.addEventListener('scroll', () => {
+              const header = document.querySelector('header');
+              const scrolled = window.pageYOffset;
+              header.style.transform = `translateY(${scrolled * 0.3}px)`;
+              header.style.opacity = 1 - (scrolled / 500);
+        });
+    </script>
 
-  <div class="card" onclick="acessar('projetos/miniprojetos/index.html')">
-    <div class="card-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">⚡</div>
-    <p class="linguagem">JAVASCRIPT / HTML</p>
-    <h2>⚡ Mini Projetos JavaScript</h2>
-    <p>Conjunto de pequenos sistemas interativos demonstrando diferentes funcionalidades em JS.</p>
-  </div>
-
-  <div class="card" onclick="acessar('https://github.com/Belganciaga/gerador-herois')">
-    <div class="card-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🦸</div>
-    <p class="linguagem">KOTLIN</p>
-    <h2>🦸 Gerador de Heróis</h2>
-    <p>App que cria heróis aleatórios com atributos únicos e poderes personalizados.</p>
-  </div>
-
-  <div class="card" onclick="acessar('projetos/paginainst/index.html')">
-    <div class="card-img" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🏢</div>
-    <p class="linguagem">HTML / CSS</p>
-    <h2>🏢 Página Institucional</h2>
-    <p>Site moderno e responsivo com interações suaves ao clique do usuário.</p>
-  </div>
-
-  <div class="card" onclick="acessar('https://github.com/Belganciaga/parque-municipal')">
-    <div class="card-img" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🌳</div>
-    <p class="linguagem">KOTLIN</p>
-    <h2>🌳 Parque Municipal Digital</h2>
-    <p>Aplicativo educativo com informações ambientais e navegação intuitiva.</p>
-  </div>
-
-  <div class="card" onclick="acessar('https://github.com/Belganciaga/sistema-cep')">
-    <div class="card-img" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">📍</div>
-    <p class="linguagem">TYPESCRIPT</p>
-    <h2>📍 Sistema de CEP</h2>
-    <p>Busca automática e validação de endereços utilizando API ViaCEP e TypeScript.</p>
-  </div>
-
-  <div class="card" onclick="acessar('https://github.com/Belganciaga/magic8ball')">
-    <div class="card-img" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">🎱</div>
-    <p class="linguagem">KOTLIN</p>
-    <h2>🎱 Magic 8 Ball</h2>
-    <p>Respostas aleatórias divertidas no estilo clássico da "bola mágica".</p>
-  </div>
-
-  <div class="card" onclick="acessar('https://github.com/Belganciaga/app-doacao')">
-    <div class="card-img" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); display: flex; align-items: center; justify-content: center; font-size: 4rem;">❤️</div>
-    <p class="linguagem">KOTLIN</p>
-    <h2>❤️ App de Doação</h2>
-    <p>Aplicativo para cadastrar itens, organizar e gerenciar doações sociais.</p>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>🚀 Linguagens que Pratico</h2>
-  <div class="skills-grid">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" title="Kotlin">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3">
-  </div>
-
-  <h2>🌐 Onde me Encontrar</h2>
-  <!-- CORRIGIDO: adicionado rel="noopener noreferrer" por segurança (tabnabbing) -->
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/thayrodrigues0308/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Thais Rodrigues" title="LinkedIn">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
-    </a>
-    <a href="https://github.com/Belganciaga" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Belganciaga" title="GitHub">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-    </a>
-  </div>
-</section>
-
-<footer>
-  <!-- CORRIGIDO: ano atualizado para 2026 -->
-  © 2026 • Desenvolvido com 💛 por Thais Rodrigues (Belganciaga)
-</footer>
-
-<script>
-  function acessar(link) {
-    window.open(link, '_blank');
-  }
-
-  // CORRIGIDO: template literal com crases e interpolação correta
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    const scrolled = window.pageYOffset;
-    header.style.transform = `translateY(${scrolled * 0.3}px)`;
-    header.style.opacity = 1 - (scrolled / 500);
-  });
-</script>
-
-</body>
-</html>
+  </body>
+</html>html>
+    </script>
+  </footer></p></p></span></h1>
+    </header>
+  </body>
+    </style></title>
+  </head>
